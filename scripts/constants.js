@@ -1,0 +1,3 @@
+const GAME_WIDTH = 800
+const GAME_HEIGHT = 600
+const ACCELERATION = 0.3

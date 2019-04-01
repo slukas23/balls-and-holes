@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    font-family: "Nova Mono", monospace;
+    color: #3b3b3b;
+    background-color: #fff;
+    padding: 20px 100px 20px 100px;
+}
+
+.headbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading1 {
+    font-size: 20px;
+}
+
+.game-name1 {
+    color: #3b3b3b;
+    font-size: 40px;
+}
+
+.headbar #logo {
+    margin-left: 20px;
+    width: 60px;
+    height: 60px;
+    -webkit-transition: 0.6s ease-out;
+    -moz-transition: 0.6s ease-out;
+    transition: 0.6s ease-out;
+}
+
+#logo:hover {
+    -webkit-transform: rotateZ(720deg);
+    -moz-transform: rotateZ(720deg);
+    transform: rotateZ(720deg);
+}
+
+.container {
+    margin: 20px 50px 20px 50px;
+    display: flex;
+    justify-content: center;
+    border: black solid 2px;
+}
+
+.first-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+}
+
+.play {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px;
+}
+
+.play #play-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 90px;
+    -webkit-transition: 0.6s ease-out;
+    -moz-transition: 0.6s ease-out;
+    transition: 0.7s ease-out;
+    -webkit-filter: drop-shadow(5px 5px 5px #b1b1b1);
+    filter: drop-shadow(5px 5px 5px #b1b1b1);
+}
+
+#play-button:hover {
+    -webkit-transform: rotateZ(360deg);
+    -moz-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+    cursor: pointer;
+    filter: none;
+}
+
+.play #play-text {
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.second-row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.highscore {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.second-row #settings {
+    height: 60px;
+    width: 60px;
+    -moz-animation: bounce 0.5s infinite linear;
+    -o-animation: bounce 0.5s infinite linear;
+    -webkit-animation: bounce 0.5s infinite linear;
+    animation: bounce 0.5s infinite linear;
+}
+
+.second-row #highscore {
+    height: 80px;
+    width: 80px;
+}
