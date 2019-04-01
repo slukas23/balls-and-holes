@@ -7,7 +7,8 @@ function setup() {
 function draw() {
     game.draw()
 }
-
 function keyPressed() {
-    game.keyPressed()
+    if (keyCode === BACKSPACE) {
+        game.ball.move()
+    }
 }

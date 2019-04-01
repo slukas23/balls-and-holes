@@ -3,6 +3,7 @@ class Game {
     constructor() {
         // add some properties
         this.ball = new Ball()
+        this.hole = new Hole()
         /* this.circle = new Circle() */
         this.gameOver = false
         this.score = 0
@@ -12,6 +13,7 @@ class Game {
         createCanvas(GAME_WIDTH, GAME_HEIGHT)
         frameRate(60) /* This number means how many times it refresh every second */
         this.ball.setup() /* ?? */
+        this.hole.setup() /* ?? */
     }
 
     setScoreInterval() {
@@ -24,12 +26,6 @@ class Game {
         )
     }
 
-    keyPressed() {
-        if (keyCode === BACKSPACE) {
-            this.ball.y--
-        }
-    }
-
     draw() {
         clear()
         background("#d2d2d2")
@@ -38,6 +34,7 @@ class Game {
             text("Game Over", 10, 30)
         } else {
             this.ball.draw()
+            this.hole.draw()
         }
     }
 
