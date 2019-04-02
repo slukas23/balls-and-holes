@@ -10,7 +10,7 @@ class Ball {
     }
 
     move() {
-        this.velocity = 10
+        this.velocity = 15
     }
 
     draw() {

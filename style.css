@@ -8,7 +8,7 @@ html,
 body {
     font-family: "Nova Mono", monospace;
     color: #3b3b3b;
-    background-color: #fff;
+    background-color: #f0f0f0;
     padding: 20px 100px 20px 100px;
 }
 
@@ -16,6 +16,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .heading1 {
@@ -25,6 +26,7 @@ body {
 .game-name1 {
     color: #3b3b3b;
     font-size: 40px;
+    text-shadow: 5px 5px 5px #b1b1b1;
 }
 
 .headbar #logo {
@@ -112,8 +114,8 @@ body {
 }
 
 .second-row #settings {
-    height: 60px;
-    width: 60px;
+    height: 80px;
+    width: 80px;
     -moz-animation: bounce 0.5s infinite linear;
     -o-animation: bounce 0.5s infinite linear;
     -webkit-animation: bounce 0.5s infinite linear;

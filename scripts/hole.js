@@ -2,10 +2,10 @@ class Hole {
     constructor() {}
 
     setup() {
-        this.x = 300
-        this.y = 450
-        this.w = 30
-        this.h = 30
+        this.x = 400
+        this.y = 200
+        this.w = 50
+        this.h = 50
     }
 
     draw() {

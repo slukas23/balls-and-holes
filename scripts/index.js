@@ -8,7 +8,7 @@ function draw() {
     game.draw()
 }
 function keyPressed() {
-    if (keyCode === BACKSPACE) {
+    if (keyCode === ENTER) {
         game.ball.move()
     }
 }
