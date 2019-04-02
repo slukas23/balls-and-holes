@@ -4,8 +4,8 @@ class Game {
     constructor() {
         this.ball = new Ball()
         this.hole = new Hole()
-        this.innerCircle = new Circle(400, 200, 300)
-        this.outerCircle = new Circle(0, 0, 250)
+        this.innerCircle = new Circle(400, 200, 250)
+        this.outerCircle = new Circle(400, 200, 300)
 
         //this.gameOver = false
         //this.score = 0

@@ -8,13 +8,14 @@ class Circle {
     }
 
     draw() {
+        push()
         this.t += 0.03
         translate(this.cx, this.cy)
         rotate(this.t)
         ellipse(0, 0, this.r)
-        // line(-this.r / 2, 0, this.r / 2, 0)
         //rotate(PI / 2)
         line(-this.r / 2, 0, this.r / 2, 0)
+        pop()
     }
 }
 
