@@ -1,10 +1,12 @@
+
 /* const game = new Ball(50, 50, 80, 80) */
+
 class Game {
     constructor() {
-        // add some properties
         this.ball = new Ball()
         this.hole = new Hole()
-        this.circle = new Circle()
+        this.circle = new Circle(400, 200, 300)
+
         //this.gameOver = false
         //this.score = 0
     }
@@ -18,14 +20,14 @@ class Game {
     }
 
     /* setScoreInterval() {
-        this.scoreInterval = setInterval(
-            function() {
-                this.score++
-                document.querySelector("h1").innerHTML = `Score: ${this.score}`
-            }.bind(this),
-            1000
-        )
-    } */
+          this.scoreInterval = setInterval(
+              function() {
+                  this.score++
+                  document.querySelector("h1").innerHTML = `Score: ${this.score}`
+              }.bind(this),
+              1000
+          )
+      } */
 
     draw() {
         clear()
@@ -36,21 +38,22 @@ class Game {
         } else {
             this.ball.draw()
             this.hole.draw()
+            fill(100, 50) /* Sets the color of the big circle */
             this.circle.draw()
         }
     }
 
     /* draw() {
-    clear()
-background("red")
-translate(width / 2, height / 2)
-scale(0.6)
-var wheel = new Wheel(0, 0, 300)
-
-fill("#3b3b3b")
-wheel.draw()
-
-t += 0.07 */
+      clear()
+  background("red")
+  translate(width / 2, height / 2)
+  scale(0.6)
+  var wheel = new Wheel(0, 0, 300)
+  
+  fill("#3b3b3b")
+  wheel.draw()
+  
+  t += 0.07 */
 
     over() {
         this.gameOver = true
