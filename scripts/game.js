@@ -1,11 +1,11 @@
-
 /* const game = new Ball(50, 50, 80, 80) */
 
 class Game {
     constructor() {
         this.ball = new Ball()
         this.hole = new Hole()
-        this.circle = new Circle(400, 200, 300)
+        this.innerCircle = new Circle(400, 200, 300)
+        this.outerCircle = new Circle(0, 0, 250)
 
         //this.gameOver = false
         //this.score = 0
@@ -16,7 +16,6 @@ class Game {
         frameRate(60) /* This number means how many times it refresh every second */
         this.ball.setup()
         this.hole.setup()
-        //this.circle.setup()
     }
 
     /* setScoreInterval() {
@@ -39,7 +38,8 @@ class Game {
             this.ball.draw()
             this.hole.draw()
             fill(100, 50) /* Sets the color of the big circle */
-            this.circle.draw()
+            this.innerCircle.draw()
+            this.outerCircle.draw()
         }
     }
 
