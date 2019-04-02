@@ -4,8 +4,16 @@ class Game {
     constructor() {
         this.ball = new Ball()
         this.hole = new Hole()
-        this.innerCircle = new Circle(400, 200, 250)
-        this.outerCircle = new Circle(400, 200, 300)
+        this.angle = 0
+        this.arc = this.arc = [
+            new Arc(180, 270, "#0079D8"),
+            new Arc(270, 360, "#FDDF1A"),
+            new Arc(90, 180, "#0AD800"),
+            new Arc(0, 90, "#FF2727")
+        ]
+
+        //this.innerCircle = new Circle(400, 200, 250)
+        //this.outerCircle = new Circle(400, 200, 300)
 
         //this.gameOver = false
         //this.score = 0
@@ -36,10 +44,18 @@ class Game {
             text("Game Over", 10, 30)
         } else {
             this.ball.draw()
+
+            push()
+            translate(400, 200)
+            rotate(this.angle)
+            this.arc.forEach(arc => arc.draw())
+            pop()
+            this.angle += 1
             this.hole.draw()
+
             fill(100, 50) /* Sets the color of the big circle */
-            this.innerCircle.draw()
-            this.outerCircle.draw()
+            //this.innerCircle.draw()
+            //this.outerCircle.draw()
         }
     }
 

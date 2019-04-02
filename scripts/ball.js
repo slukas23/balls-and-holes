@@ -3,7 +3,7 @@ class Ball {
 
     setup() {
         this.x = 400
-        this.y = 550
+        this.y = 510
         this.w = 30
         this.h = 30
         this.velocity = 0
