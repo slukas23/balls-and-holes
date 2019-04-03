@@ -3,20 +3,17 @@
 class Game {
     constructor() {
         this.ball = new Ball()
-        this.hole = new Hole()
+        this.hole = new Hole(3)
         this.angle = 0
-        this.arc = this.arc = [
-            new Arc(180, 270, "#0079D8"),
-            new Arc(270, 360, "#FDDF1A"),
-            new Arc(90, 180, "#0AD800"),
-            new Arc(0, 90, "#FF2727")
+        this.score = 0
+        this.arc = [
+            new Arc(270, 360, "#FDDF1A"), // yellow
+            new Arc(180, 270, "#0079D8"), // blue
+            new Arc(90, 180, "#0AD800"), // green
+            new Arc(0, 90, "#FF2727") // red
         ]
 
-        //this.innerCircle = new Circle(400, 200, 250)
-        //this.outerCircle = new Circle(400, 200, 300)
-
         //this.gameOver = false
-        //this.score = 0
     }
 
     setup() {
@@ -26,53 +23,35 @@ class Game {
         this.hole.setup()
     }
 
-    /* setScoreInterval() {
-          this.scoreInterval = setInterval(
-              function() {
-                  this.score++
-                  document.querySelector("h1").innerHTML = `Score: ${this.score}`
-              }.bind(this),
-              1000
-          )
-      } */
-
     draw() {
         clear()
-        background("#e2e2e2")
+        background("#f0f0f0")
+        fill(50)
+        text(this.score, 30, 100)
+        textSize(40)
+        //textFont(avenir)
+
         if (this.gameOver) {
             textSize(50)
             text("Game Over", 10, 30)
         } else {
-            this.ball.draw()
-
             push()
-            translate(400, 200)
+            translate(450, 200)
             rotate(this.angle)
             this.arc.forEach(arc => arc.draw())
             pop()
-            this.angle += 1
-            this.hole.draw()
+            this.ball.draw()
+            this.angle += 2
+            this.angle = this.angle % 360
 
-            fill(100, 50) /* Sets the color of the big circle */
-            //this.innerCircle.draw()
-            //this.outerCircle.draw()
+            this.hole.draw()
         }
     }
-
-    /* draw() {
-      clear()
-  background("red")
-  translate(width / 2, height / 2)
-  scale(0.6)
-  var wheel = new Wheel(0, 0, 300)
-  
-  fill("#3b3b3b")
-  wheel.draw()
-  
-  t += 0.07 */
 
     over() {
         this.gameOver = true
         clearInterval(this.scoreInterval)
     }
 }
+
+//loadFont("assets/Avenir.otf")

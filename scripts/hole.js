@@ -1,28 +1,19 @@
 class Hole {
-    constructor() {}
-
-    setup() {
-        this.x = 400
+    constructor(index) {
+        this.x = 450
         this.y = 200
         this.w = 50
         this.h = 50
+        let color = ["#FF2727", "#0AD800", "#FDDF1A", "#0079D8"] // red, yellow, green, blue
+        this.color = color[Math.floor(Math.random() * 4)]
     }
 
+    setup() {}
+
     draw() {
-        fill(0)
+        //fill(this.color[randomizer(0, 2)])
+        //fill(this.color[randomizer(0, 2)])
+        fill(this.color)
         ellipse(this.x, this.y, this.w, this.h)
     }
 }
-
-// Random circle color
-
-/* function randomColor(hexCodes) {
-    return heXCodes[Math.floor(Math.random() * hexCodes.length)]
-} */
-
-/* var hexCodes = ["#FF2727", "#FDDF1A", "#0AD800", "#0079D8"]
-console.log(randomColor(hexCodes)) */
-
-/* let colors = ["#FF2727", "#FDDF1A", "#0AD800", "#0079D8"]
-let colors = random(colors)
-text(colors, 10, 50) // draw the word */
