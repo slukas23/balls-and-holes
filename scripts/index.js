@@ -10,17 +10,20 @@ function draw() {
 function keyPressed() {
     if (keyCode === ENTER) {
         game.ball.move()
-        if (game.hole.color[0] === "#FF2727" && game.angle <= 90 && game.angle >= 0) {
+        if (game.hole.color === "#FF2727" && game.angle <= 90 && game.angle >= 0) {
             game.score++
-        }
 
-        /*  } else if (game.hole.color[1] === "#0AD800" && game.angle <= 180 && game.angle >= 90) {
+            setTimeout(() => game.hole.randomColor(), 500)
+        } else if (game.hole.color === "#FDDF1A" && game.angle <= 180 && game.angle >= 90) {
             game.score++
-        } else if (game.hole.color[2] === "#FDDF1A" && game.angle <= 270 && game.angle >= 180) {
+            setTimeout(() => game.hole.randomColor(), 500)
+        } else if (game.hole.color === "#0079D8" && game.angle <= 270 && game.angle >= 180) {
             game.score++
-        } else if (game.hole.color[3] === "#0079D8" && game.angle <= 360 && game.angle >= 270) {
+            setTimeout(() => game.hole.randomColor(), 500)
+        } else if (game.hole.color === "#0AD800" && game.angle <= 360 && game.angle >= 270) {
             game.score++
+            setTimeout(() => game.hole.randomColor(), 500)
+        } else {
         }
-    */
     }
 }

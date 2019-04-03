@@ -4,8 +4,8 @@ class Ball {
     setup() {
         this.x = 450
         this.y = 510
-        this.w = 30
-        this.h = 30
+        this.w = 20
+        this.h = 20
         this.velocity = 0
     }
 
