@@ -15,7 +15,8 @@ class Ball {
 
     draw() {
         this.y -= this.velocity
-        fill("#3b3b3b")
+        fill("#b4b4b4")
+        strokeWeight(0)
         ellipse(this.x, this.y, this.w, this.h)
         if (this.y < 200) {
             this.velocity = 0

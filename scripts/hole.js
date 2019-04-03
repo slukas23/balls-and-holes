@@ -11,9 +11,9 @@ class Hole {
     setup() {}
 
     draw() {
-        //fill(this.color[randomizer(0, 2)])
-        //fill(this.color[randomizer(0, 2)])
         fill(this.color)
+        stroke("#f0f0f0")
+        strokeWeight(10)
         ellipse(this.x, this.y, this.w, this.h)
     }
 

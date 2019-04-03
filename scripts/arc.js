@@ -17,7 +17,7 @@ class Arc {
         angleMode(DEGREES)
         this.y -= this.velocity
         fill(this.color)
-        strokeWeight(1)
+        strokeWeight(0)
         stroke(this.color)
         arc(this.x, this.y, this.w, this.h, this.start, this.stop)
         pop()

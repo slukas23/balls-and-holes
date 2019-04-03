@@ -6,6 +6,7 @@ class Game {
         this.hole = new Hole()
         this.angle = 0
         this.score = 0
+        this.health = 3
         this.arc = [
             new Arc(270, 360, "#FDDF1A"), // yellow
             new Arc(180, 270, "#0079D8"), // blue
@@ -25,12 +26,14 @@ class Game {
         clear()
         background("#f0f0f0")
         fill(50)
+        strokeWeight(0)
         text(this.score, 30, 100)
+        text(this.health, 30, 200)
         textSize(40)
 
         if (this.gameOver) {
-            textSize(50)
-            text("Game Over", 10, 30)
+            textSize(80)
+            text("Game Over!", 250, 250)
         } else {
             push()
             translate(450, 200)
@@ -40,14 +43,13 @@ class Game {
             this.ball.draw()
             this.angle += 2
             this.angle = this.angle % 360
-
             this.hole.draw()
         }
     }
 
     over() {
         this.gameOver = true
-        clearInterval(this.scoreInterval)
+        clearInterval(this.score)
     }
 }
 
