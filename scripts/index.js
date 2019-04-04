@@ -1,9 +1,21 @@
+/* removes the retry button from DOM */
+document.querySelector(".second-row").style.display = "none"
+
 let displayGame = false
 const game = new Game()
 
 document.querySelector(".play").addEventListener("click", function() {
     displayGame = true
-    document.querySelector(".first-row").innerHTML = ""
+    let childDiv = document.querySelector(".first-row")
+    document.querySelector("body").removeChild(childDiv)
+})
+
+document.querySelector(".retry").addEventListener("click", function() {
+    displayGame = true
+    game.gameOver = false
+    game.health = 3
+    game.score = 0
+    document.querySelector(".second-row").style.display = "none"
 })
 
 function setup() {
@@ -13,6 +25,17 @@ function setup() {
 function draw() {
     if (displayGame) {
         game.draw()
+    }
+    if (game.ball.y == 300) {
+        if (game.hole.color === game.ball.color) {
+            let angles = colorAngles[game.ball.color]
+
+            if (game.angle >= angles[0] && game.angle <= angles[1]) {
+                scoreBall()
+            } else {
+                wrongBall()
+            }
+        }
     }
 }
 
@@ -32,12 +55,12 @@ function wrongBall() {
     // you have more lives
     if (game.health > 0) {
         game.health--
+        //hitArc.play()
         hitArc.play()
         game.ball.wrongMove()
     } else {
         // no more lives for you
         game.over()
-        setTimeout(() => gameOver.play(), 350)
     }
 }
 
@@ -50,34 +73,9 @@ let colorAngles = {
 
 function keyPressed() {
     if (keyCode === ENTER) {
-        if (game.hole.color === game.ball.color) {
-            let angles = colorAngles[game.ball.color]
-            if (game.angle >= angles[0] && game.angle <= angles[1]) {
-                scoreBall()
-            } else {
-                wrongBall()
-            }
-        } else {
-            wrongBall()
-        }
+        if (game.ball.y == 510) game.ball.move()
+        setTimeout(() => {
+            if (game.gameOver) gameOver.play()
+        }, 300)
     }
-
-    // if (keyCode === ENTER) {
-    //     if (game.hole.color === "#FF2727" && game.angle <= 90 && game.angle >= 0) {
-    //         scoreBall()
-    //     } else if (game.color === "#FDDF1A" && game.angle <= 180 && game.angle >= 90) {
-    //         scoreBall()
-    //     } else if (game.color === "#0079D8" && game.angle <= 270 && game.angle >= 180) {
-    //         scoreBall()
-    //     } else if (game.color === "#0AD800" && game.angle <= 360 && game.angle >= 270) {
-    //         scoreBall()
-    //     } else if (game.health !== 0) {
-    //         game.health--
-    //         hitArc.play()
-    //         game.ball.wrongMove()
-    //     } else {
-    //         game.over()
-    //         setTimeout(() => gameOver.play(), 350)
-    //     }
-    // }
 }

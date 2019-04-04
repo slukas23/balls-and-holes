@@ -16,10 +16,7 @@ class Ball {
     }
 
     wrongMove() {
-        this.velocity = 15
-        setTimeout(() => {
-            this.velocity = -10
-        }, 200)
+        this.velocity = -10
     }
 
     draw() {

@@ -29,14 +29,17 @@ class Game {
         background("#f0f0f0")
         fill("#3b3b3b")
         strokeWeight(0)
-        textFont(gameFont, 36)
-        text("Score " + this.score, 30, 100)
-        text("Health " + this.health, 30, 200)
+        textFont(gameFont, 20)
+
+        text("Score: " + this.score, 40, 100)
+        text("Health: " + this.health, 700, 100)
         textSize(40)
 
         if (this.gameOver) {
+            fill("#FF2727")
             textSize(60)
-            text("Game Over!", 250, 250)
+            text("Game Over!", 275, 250)
+            document.querySelector(".second-row").style.display = "block"
         } else {
             push()
             translate(450, 200)
@@ -47,7 +50,7 @@ class Game {
             this.arc.forEach(arc => arc.draw())
             pop()
             this.ball.draw()
-            this.angle += 2 + this.score * 0.1
+            this.angle += 2 + this.score * 0.3
             // console.log(this.angle)
             this.angle = this.angle % 360
             // this.angle *= -1
