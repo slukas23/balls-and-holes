@@ -1,5 +1,7 @@
 class Ball {
-    constructor() {}
+    constructor(color) {
+        this.color = color
+    }
 
     setup() {
         this.x = 450
@@ -13,12 +15,20 @@ class Ball {
         this.velocity = 15
     }
 
+    wrongMove() {
+        this.velocity = 15
+        setTimeout(() => {
+            this.velocity = -10
+        }, 200)
+    }
+
     draw() {
         this.y -= this.velocity
-        fill("#b4b4b4")
-        strokeWeight(0)
+
+        fill(this.color)
+        strokeWeight(5)
         ellipse(this.x, this.y, this.w, this.h)
-        if (this.y < 200) {
+        if (this.y < 200 || this.y > GAME_HEIGHT) {
             this.velocity = 0
             this.x = 450
             this.y = 510

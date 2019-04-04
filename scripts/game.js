@@ -2,8 +2,10 @@
 
 class Game {
     constructor() {
-        this.ball = new Ball()
-        this.hole = new Hole()
+        let color = ["#FF2727", "#0AD800", "#FDDF1A", "#0079D8"] // red, yellow, green, blue
+        this.color = color[Math.floor(Math.random() * 4)]
+        this.ball = new Ball(this.color)
+        this.hole = new Hole(this.color)
         this.angle = 0
         this.score = 0
         this.health = 3
@@ -25,24 +27,30 @@ class Game {
     draw() {
         clear()
         background("#f0f0f0")
-        fill(50)
+        fill("#3b3b3b")
         strokeWeight(0)
-        text(this.score, 30, 100)
-        text(this.health, 30, 200)
+        textFont(gameFont, 36)
+        text("Score " + this.score, 30, 100)
+        text("Health " + this.health, 30, 200)
         textSize(40)
 
         if (this.gameOver) {
-            textSize(80)
+            textSize(60)
             text("Game Over!", 250, 250)
         } else {
             push()
             translate(450, 200)
+            // if (this.score > 2) rotate(-this.angle)
+            // else
             rotate(this.angle)
+            // rotate(-this.angle)
             this.arc.forEach(arc => arc.draw())
             pop()
             this.ball.draw()
-            this.angle += 2
+            this.angle += 2 + this.score * 0.1
+            // console.log(this.angle)
             this.angle = this.angle % 360
+            // this.angle *= -1
             this.hole.draw()
         }
     }
@@ -51,26 +59,9 @@ class Game {
         this.gameOver = true
         clearInterval(this.score)
     }
-}
 
-/* let myFont
-function preload() {
-    myFont = loadFont("assets/AvenirNextLTPro-Demi.otf")
+    randomColor() {
+        let color = ["#FF2727", "#0AD800", "#FDDF1A", "#0079D8"] // red, yellow, green, blue
+        this.color = color[Math.floor(Math.random() * 4)]
+    }
 }
-
-function setup() {
-    fill("#ED225D")
-    textFont(myFont)
-    textSize(36)
-    text("p5*js", 10, 50)
-}
-
-function setup() {
-    loadFont("assets/AvenirNextLTPro-Demi.otf", drawText)
-}
-
-function drawText(font) {
-    fill("#ED225D")
-    textFont(font, 36)
-    text("p5*js", 10, 50)
-} */
