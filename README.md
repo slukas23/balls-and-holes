@@ -8,7 +8,7 @@ This is my first game. It is designed to be highly addictive. You can play it he
 
 ## Instructions:
 
-:point_right: Press __ENTER__ to shoot!
+:point_right: Press __ENTER__ to shoot the ball!
 
 :point_right: You have __3 lives__ (HEALTH). Actually 4, zero is your bonus life! 
 
