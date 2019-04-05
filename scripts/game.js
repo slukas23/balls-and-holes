@@ -31,9 +31,13 @@ class Game {
         strokeWeight(0)
         textFont(gameFont, 20)
 
-        text("Score: " + this.score, 40, 100)
-        text("Health: " + this.health, 700, 100)
-        textSize(40)
+        text("Health: " + this.health, 40, 160)
+        text("Score: " + this.score, 40, 130)
+        //text("Score: " + this.score, 40, 100)
+        //text("Health: " + this.health, 700, 100)
+        textSize(20)
+        text("Hit ENTER to shoot!", 350, 550)
+        textSize(25)
 
         if (this.gameOver) {
             fill("#FF2727")
