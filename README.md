@@ -21,5 +21,5 @@ After each successful hit the rotation speed increases.
 
 ## Technology:
 
-I used HTML, CSS, Javascript, P5 and  DOM manipulation.
+I used Canvas / P5 and little bit of DOM manipulation.
 
