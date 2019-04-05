@@ -36,7 +36,7 @@ class Game {
         //text("Score: " + this.score, 40, 100)
         //text("Health: " + this.health, 700, 100)
         textSize(20)
-        text("Hit ENTER to shoot!", 350, 550)
+        if (!game.gameOver) text("Hit ENTER to shoot!", 350, 550)
         textSize(25)
 
         if (this.gameOver) {
@@ -47,10 +47,9 @@ class Game {
         } else {
             push()
             translate(450, 200)
-            // if (this.score > 2) rotate(-this.angle)
-            // else
+            //if (this.score > 2) rotate(-this.angle)
             rotate(this.angle)
-            // rotate(-this.angle)
+            //rotate(-this.angle)
             this.arc.forEach(arc => arc.draw())
             pop()
             this.ball.draw()
